@@ -34,7 +34,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
       rules: buildLoaders(options),
     },
     //узноваемые расширения
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
     //для отслеживание ошибок сборки
     devtool: isDev ? "inline-source-map" : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
