@@ -5,20 +5,37 @@ import { AppRouter } from "./providers/router";
 import "./styles/index.scss";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
+import { Suspense } from "react";
+
+// import { useTranslation } from "react-i18next";
+
+// const Companent = () => {
+//   const { t, i18n } = useTranslation();
+
+//   const toggle = () => {
+//     i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
+//   };
+//   return (
+//     <div>
+//       <button onClick={toggle}>{t("user")}</button>
+
+//       {t("Тестовый пример")}
+//     </div>
+//   );
+// };
 
 const App = () => {
   const { theme } = useTheme();
 
-  // <div className={`app ${theme}`}>
-  // <div className={classNames("app", { hovered: true, selected: false }, [theme, "cls2", "cls3"])}>
-
   return (
     <div className={classNames("app", {}, [theme])}>
-      <Navbar />
-      <div className="content-page">
-        <Sidebar />
-        <AppRouter />
-      </div>
+      <Suspense fallback="">
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
+        </div>
+      </Suspense>
     </div>
   );
 };
