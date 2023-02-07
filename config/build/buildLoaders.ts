@@ -3,6 +3,23 @@ import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+  //SVG картинки
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ["@svgr/webpack"],
+  };
+
+  //Картинки png|jpe?g|gif|woff2|woff
+  //и шрифты из файлов
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
   //Так как уже используем typeScript то typescriptLoader
   //уже умеет обрабатывать jsx
   // если б без typeScript - нужен был бы bable-loader
@@ -38,5 +55,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
-  return [typescriptLoader, cssLoader];
+  return [svgLoader, fileLoader, typescriptLoader, cssLoader];
 }
