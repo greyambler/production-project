@@ -20,6 +20,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
+  // babel
   const babelLoader = {
     //test: /\.m?js$/, // эта регулярка настроена на js файлы
     test: /\.(js|jsx|tsx)$/, //настроим для переводов на js jsx tsx файлы
@@ -33,8 +34,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             "i18next-extract",
             {
               locales: ["ru", "en"],
-              defaultNS: "translation",
-              keyAsDefaultValue: true,
+              keyAsDefaultValue: false, // при добавлении нового объекта перевода в значении не копируется ключь
+              saveMissing: true,
+              outputPath: "public/locales/{{locale}}/{{ns}}.json",
             },
           ],
         ],
