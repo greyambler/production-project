@@ -20,6 +20,28 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
+  const babelLoader = {
+    //test: /\.m?js$/, // эта регулярка настроена на js файлы
+    test: /\.(js|jsx|tsx)$/, //настроим для переводов на js jsx tsx файлы
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+        plugins: [
+          [
+            "i18next-extract",
+            {
+              locales: ["ru", "en"],
+              defaultNS: "translation",
+              keyAsDefaultValue: true,
+            },
+          ],
+        ],
+      },
+    },
+  };
+
   //Так как уже используем typeScript то typescriptLoader
   //уже умеет обрабатывать jsx
   // если б без typeScript - нужен был бы bable-loader
@@ -55,5 +77,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
-  return [svgLoader, fileLoader, typescriptLoader, cssLoader];
+  return [svgLoader, fileLoader, babelLoader, typescriptLoader, cssLoader];
 }

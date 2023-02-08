@@ -7,7 +7,7 @@ import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 import { Suspense } from "react";
 
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 // const Companent = () => {
 //   const { t, i18n } = useTranslation();
@@ -17,7 +17,7 @@ import { Suspense } from "react";
 //   };
 //   return (
 //     <div>
-//       <button onClick={toggle}>{t("user")}</button>
+//       <button onClick={toggle}>{t("пользователь")}</button>
 
 //       {t("Тестовый пример")}
 //     </div>
