@@ -3,25 +3,25 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { AppRouter } from './providers/router';
 import './styles/index.scss';
 
-function Companent() {
-    const { t, i18n } = useTranslation();
+// function Companent() {
+//     const { t, i18n } = useTranslation();
+//     //const { t } = useTranslation();
+//     const toggle = () => {
+//         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+//     };
 
-    const toggle = () => {
-        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-    };
-
-    return (
-        <div>
-            <button type="button" onClick={toggle}>
-                {t('Переключатель языка', { ns: 'translation' })}
-            </button>
-        </div>
-    );
-}
+//     return (
+//         <div>
+//             <button type="button" onClick={toggle}>
+//                 {t('Переключатель языка', { ns: 'translation' })}
+//             </button>
+//         </div>
+//     );
+// }
 
 function App() {
     const { theme } = useTheme();
@@ -29,7 +29,7 @@ function App() {
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
-                <Companent />
+                {/* <Companent /> */}
                 <Navbar />
                 <div className="content-page">
                     <Sidebar />
