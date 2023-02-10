@@ -49,6 +49,8 @@ module.exports = {
         'space-unary-ops': 2,
         'i18next/no-literal-string': [2, { markupOnly: true }],
         'max-len': ['error', 100, { ignoreComments: true }],
+
+        "declaration-property-value-no-unknown": true,
     },
     globals: {
         __IS_DEV__: true,
