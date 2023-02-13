@@ -48,7 +48,7 @@ module.exports = {
         semi: [1, 'always'],
         'space-unary-ops': 2,
         'i18next/no-literal-string': [2, { markupOnly: true }],
-        'max-len': ['error', 100, { ignoreComments: true }],
+        'max-len': ['error', { ignoreComments: true, code: 100 }],
 
         'declaration-property-value-no-unknown': 0,
     },
