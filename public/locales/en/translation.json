@@ -1,9 +1,12 @@
 {
+  "Обновить страницу": "Refresh the page",
   "Перевод": "Translate",
   "Переключатель языка": "Переключатель языка",
   "Пример": "example",
+  "Произошла непредвиденая ошибка": "An unexpected error has occurred",
   "Страница не найдена": "Page not found",
   "Тестовый пример": "Test example",
   "Язык": "english",
-  "тумблер": "toggle"
+  "тумблер": "toggle",
+  "Выдать ошибку": "Throw an error"
 }
