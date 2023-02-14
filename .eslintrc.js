@@ -47,7 +47,11 @@ module.exports = {
         'no-else-return': 1,
         semi: [1, 'always'],
         'space-unary-ops': 2,
-        'i18next/no-literal-string': [2, { markupOnly: true }],
+        'i18next/no-literal-string': ['error',
+            {
+                markupOnly: true, ignoreAttribute: ['data-testid'],
+            },
+        ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
 
         'declaration-property-value-no-unknown': 0,
@@ -55,6 +59,14 @@ module.exports = {
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 };
 
 // 0 - off - отключено

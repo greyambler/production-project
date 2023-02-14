@@ -1,6 +1,8 @@
 // export function classNames(cls: string, mods: Mods, addtional: string[]): string
 
-import { classNames } from './classNames';
+// import { classNames } from './classNames';
+
+import { classNames } from 'shared/lib/classNames/classNames';
 
 // classNames - хелпер на вход подается первый параметр главный класс "название класса для scss"
 // второй параметр объект Mods "{ [cls.collapsed]: collapsed }" те массив классов с параметром collapsed "true/false"
