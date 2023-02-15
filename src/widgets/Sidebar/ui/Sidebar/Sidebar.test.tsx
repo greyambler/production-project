@@ -6,7 +6,7 @@ describe('Sidebar', () => {
     test('with onle first param', () => {
         renderWithTranslatin(<Sidebar />);
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-        // screen.debug();
+        screen.debug();
     });
 
     test('test toggle', () => {
