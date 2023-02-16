@@ -4,7 +4,6 @@
 /node_modules
 /.pnp
 .idea
-/storybook-static
 .vscode
 
 .yarn/*
