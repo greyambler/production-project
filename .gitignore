@@ -5,6 +5,7 @@
 /.pnp
 .idea
 .vscode
+/extractedTranslations
 
 .yarn/*
 !.yarn/cache
