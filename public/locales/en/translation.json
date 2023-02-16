@@ -1,8 +1,6 @@
 {
   "Выдать ошибку": "Throw an error",
   "Главная": "Main",
-  "Главная страница": "Main page",
-  "Короткий язык": "En",
   "О сайте": "About the site",
   "Обновить страницу": "Refresh the page",
   "Перевод": "Translate",
@@ -11,6 +9,6 @@
   "Произошла непредвиденая ошибка": "An unexpected error has occurred",
   "Страница не найдена": "Page not found",
   "Тестовый пример": "Test example",
-  "Язык": "Language",
+  "Язык": "Lang",
   "тумблер": "toggle"
 }
