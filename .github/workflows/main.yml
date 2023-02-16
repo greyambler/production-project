@@ -1,6 +1,11 @@
 name: linting, testing, builbing
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on: label:
+    types:
+      - created
+  push:
+    branches:
+      - master
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
