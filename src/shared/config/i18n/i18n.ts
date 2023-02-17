@@ -21,3 +21,6 @@ i18n
     });
 
 export default i18n;
+
+// loadPath: '/locales/{{lng}}/{{ns}}.json',
+// loadPath: 'public/locales/{{locale}}/{{ns}}.json',
