@@ -7,6 +7,8 @@
 .vscode
 /extractedTranslations
 /storybook-static
+.loki/report.html
+.loki/report.json
 
 .yarn/*
 !.yarn/cache
