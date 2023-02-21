@@ -10,7 +10,6 @@ const MainPage = () => {
         <div>
             <BugButton />
             {t('Главная страница', { ns: 'main' })}
-            <Counter />
         </div>
     );
 };
