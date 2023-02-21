@@ -6,6 +6,7 @@ import { Suspense } from 'react';
 // import { useTranslation } from 'react-i18next';
 import { AppRouter } from './providers/router';
 import './styles/index.scss';
+import { LOCAL_STORAGE_THEME_KEY } from './providers/ThemeProvider/lib/ThemeContext';
 
 // function Companent() {
 //     const { t, i18n } = useTranslation();
@@ -25,6 +26,12 @@ import './styles/index.scss';
 
 function App() {
     const { theme } = useTheme();
+
+    // Сбрасывает в 'app_light_theme' / очищает localStorage при закрытии приложения.
+    window.onbeforeunload = () => {
+        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, 'app_light_theme');
+        // localStorage.clear();
+    };
 
     return (
         <div className={classNames('app', {}, [theme])}>
