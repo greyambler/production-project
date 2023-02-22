@@ -10,7 +10,7 @@ const sleep = (ms: number) => new Promise<void>((resolve) => {
 
 // так сделал я
 // ТАК В РЕАЛЬНЫХ ПРОЕКТАХ НЕ ДЕЛАТЬ!!!!! ДЕЛАЕМ ДЛЯ КУРСА!
-export const AboutPageAsync = lazy(() => sleep(4000).then(() => import('./AboutPage')));
+export const AboutPageAsync = lazy(() => sleep(1000).then(() => import('./AboutPage')));
 
 // Так было в лекции
 // ТАК В РЕАЛЬНЫХ ПРОЕКТАХ НЕ ДЕЛАТЬ!!!!! ДЕЛАЕМ ДЛЯ КУРСА!
