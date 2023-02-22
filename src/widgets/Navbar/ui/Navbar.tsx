@@ -12,7 +12,6 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation('navbar');
     const [isAuthModal, setIsAuthModal] = useState(false);
-
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
     }, []);
