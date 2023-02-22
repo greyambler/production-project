@@ -9,7 +9,7 @@ import './styles/index.scss';
 
 // function Companent() {
 //     const { t, i18n } = useTranslation();
-//     //const { t } = useTranslation();
+//     //const { t } = useTranslation('translation');
 //     const toggle = () => {
 //         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
 //     };
