@@ -2,9 +2,13 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 // import { useTranslation } from 'react-i18next';
+
+import { useDispatch } from 'react-redux';
+import { userActions } from 'entities/User';
 import { AppRouter } from './providers/router';
+
 import './styles/index.scss';
 
 // function Companent() {
@@ -34,6 +38,12 @@ function App() {
     //     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, 'app_light_theme');
     //     // localStorage.clear();
     // };
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(userActions.initAuthData());
+    }, [dispatch]);
 
     return (
         <div className={classNames('app', {}, [theme])}>
