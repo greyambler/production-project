@@ -25,6 +25,8 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         plugins.push(new webpack.HotModuleReplacementPlugin());
         plugins.push(new ReactRefreshWebpackPlugin());
         plugins.push(
+            // если true то запустится
+            // если false то втерминале должна быть сслка для просмотра.
             new BundleAnalyzerPlugin({
                 openAnalyzer: false,
             }),

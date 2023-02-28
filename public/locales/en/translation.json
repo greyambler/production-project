@@ -1,9 +1,4 @@
 {
-  "Введите имя": "Enter your name",
-  "Введите имя пользователя": "Enter username",
-  "Введите пароль": "enter password",
-  "Войти": "To come in",
-  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password",
   "Выдать ошибку": "Throw an error",
   "Главная страница": "Main",
   "Короткий язык": "En",
@@ -15,7 +10,6 @@
   "Произошла непредвиденая ошибка": "An unexpected error has occurred",
   "Страница не найдена": "Page not found",
   "Тестовый пример": "Test example",
-  "Форма авторизации": "Authorization form",
   "Язык": "English",
   "тумблер": "toggle"
 }
