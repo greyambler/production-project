@@ -1,36 +1,30 @@
-import { memo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
+import { memo, useMemo, useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { SidebarItemTypeList } from 'widgets/Sidebar/model/items';
-import { SidebarItem } from '../SidebarItem/SidebarItem';
-
+import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import cls from './Sidebar.module.scss';
+import { SidebarItemsList } from '../../model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
     className?: string;
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
-    const [collapsed, setCollapsed] = useState<boolean>(false);
-
-    // const [test, setTest] = useState<number>(0);
+    const [collapsed, setCollapsed] = useState(false);
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
 
-    // const itemList = useMemo(
-    //     () => SidebarItemTypeList.map((item) => (
-    //         <SidebarItem
-    //             item={item}
-    //             collapsed={collapsed}
-    //             key={item.path}
-    //         />
-    //     )),
-    //     [collapsed],
-    // );
+    const itemsList = useMemo(() => SidebarItemsList.map((item) => (
+        <SidebarItem
+            item={item}
+            collapsed={collapsed}
+            key={item.path}
+        />
+    )), [collapsed]);
 
     return (
         <div
@@ -39,7 +33,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         >
             <Button
                 data-testid="sidebar-toggle"
-                type="button"
                 onClick={onToggle}
                 className={cls.collapseBtn}
                 theme={ButtonTheme.BACKGROUND_INVERTED}
@@ -49,22 +42,14 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 {collapsed ? '>' : '<'}
             </Button>
             <div className={cls.items}>
-                {/* eslint-disable-next-line react/button-has-type */}
-                {/* <button onClick={() => setTest(test + 1)}>test</button> */}
-                {SidebarItemTypeList.map((item) => (
-                    <SidebarItem
-                        item={item}
-                        collapsed={collapsed}
-                        key={item.path}
-                    />
-                ))}
-
-                {/* {itemList} */}
-
+                {itemsList}
             </div>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher short={collapsed} className={cls.lang} />
+                <LangSwitcher
+                    short={collapsed}
+                    className={cls.lang}
+                />
             </div>
         </div>
     );

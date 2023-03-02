@@ -11,7 +11,7 @@ export function useTheme(): UseThemResult {
 
     const toggleTheme = () => {
         const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
-        setTheme(newTheme);
+        setTheme?.(newTheme);
 
         document.body.className = newTheme;
 
@@ -19,7 +19,7 @@ export function useTheme(): UseThemResult {
     };
 
     return {
-        theme,
+        theme: theme || Theme.LIGHT,
         toggleTheme,
     };
 }
