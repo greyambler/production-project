@@ -1,25 +1,26 @@
-import { Profile } from 'entities/Profile/model/types/profile';
-import { useTranslation } from 'react-i18next';
-import { Currency } from 'entities/Currency/model/types/currency';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { useTranslation } from 'react-i18next';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Currency } from 'entities/Currency/model/types/currency';
 import { CurrencySelect } from 'entities/Currency';
-import { Country, CountrySelect } from 'entities/Country';
+import { Country } from 'entities/Country/model/types/country';
+import { CountrySelect } from 'entities/Country';
 import cls from './ProfileCard.module.scss';
+import { Profile } from '../../model/types/profile';
 
 interface ProfileCardProps {
     className?: string;
     data?: Profile;
+    error?: string;
     isLoading?: boolean;
     readonly?: boolean;
-    error?: string
-    onChangeFirstname?: (value?: string) => void;
     onChangeLastname?: (value?: string) => void;
-    onChangeAge?: (value?: string) => void;
+    onChangeFirstname?: (value?: string) => void;
     onChangeCity?: (value?: string) => void;
+    onChangeAge?: (value?: string) => void;
     onChangeUsername?: (value?: string) => void;
     onChangeAvatar?: (value?: string) => void;
     onChangeCurrency?: (currency: Currency) => void;
@@ -31,18 +32,17 @@ export const ProfileCard = (props: ProfileCardProps) => {
         className,
         data,
         isLoading,
-        readonly,
         error,
+        readonly,
         onChangeFirstname,
         onChangeLastname,
         onChangeAge,
         onChangeCity,
-        onChangeUsername,
         onChangeAvatar,
-        onChangeCurrency,
+        onChangeUsername,
         onChangeCountry,
+        onChangeCurrency,
     } = props;
-
     const { t } = useTranslation('profile');
     if (isLoading) {
         return (
