@@ -1,4 +1,3 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
@@ -26,13 +25,13 @@ Error.args = {
     theme: TextTheme.ERROR,
 };
 
-export const onlyTitle = Template.bind({});
-onlyTitle.args = {
+export const OnlyTitle = Template.bind({});
+OnlyTitle.args = {
     title: 'Title lorem ipsun',
 };
 
-export const onlyText = Template.bind({});
-onlyText.args = {
+export const OnlyText = Template.bind({});
+OnlyText.args = {
     text: 'Description Description Description Description Description ',
 };
 
@@ -43,14 +42,14 @@ PrimaryDurk.args = {
 };
 PrimaryDurk.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const onlyTitleDurk = Template.bind({});
-onlyTitleDurk.args = {
+export const OnlyTitleDurk = Template.bind({});
+OnlyTitleDurk.args = {
     title: 'Title lorem ipsun',
 };
-onlyTitleDurk.decorators = [ThemeDecorator(Theme.DARK)];
+OnlyTitleDurk.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const onlyTextDurk = Template.bind({});
-onlyTextDurk.args = {
+export const OnlyTextDurk = Template.bind({});
+OnlyTextDurk.args = {
     text: 'Description Description Description Description Description ',
 };
-onlyTextDurk.decorators = [ThemeDecorator(Theme.DARK)];
+OnlyTextDurk.decorators = [ThemeDecorator(Theme.DARK)];
