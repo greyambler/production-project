@@ -11,6 +11,13 @@ import { AppRouter } from './providers/router';
 
 import './styles/index.scss';
 
+// buildLoaders.ts
+// Для того, чтобы плагин видел файлы локализаций, можно использовать структуру ключа
+// t_("locale-file:key")
+// Если у вас VSСode и установлен плагин i18n-ally, то он не хочет понимать такую структуру ключа, тогда можно использовать структуру:
+// t_("key", {ns: "locale-file"})
+// эту структуру понимают все.
+
 // function Companent() {
 //     const { t, i18n } = useTranslation();
 //     //const { t } = useTranslation('translation');

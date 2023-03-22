@@ -5,7 +5,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({
-    paths, isDev, apiUrl, project,
+    paths, isDev, apiUrl, project, analyze,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
         new HtmlWebpackPlugin({
@@ -26,7 +26,9 @@ export function buildPlugins({
     if (isDev) {
         plugins.push(new webpack.HotModuleReplacementPlugin());
         plugins.push(new BundleAnalyzerPlugin({
-            openAnalyzer: false,
+            // 23 Анализ размера банда. BundleAnalyzer 05:15  Yura Ya
+            analyzerMode: analyze ? 'server' : 'disabled',
+            // openAnalyzer: false,
         }));
     }
 

@@ -25,6 +25,8 @@ export default (env: BuildEnv) => {
         port: PORT,
         apiUrl,
         project: 'frontend',
+        // 23 Анализ размера банда. BundleAnalyzer
+        analyze: env.analyze,
     });
 
     return config;
