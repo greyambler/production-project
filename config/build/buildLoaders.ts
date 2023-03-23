@@ -25,9 +25,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         // !!!2 Router, App Layout, i18n, eslint, stylelint, jest  /// Yevgeniy • Вс 25 Сен 10:45 • Ответ создан Вс 25 Сен 05:21
 
         // Для того, чтобы плагин видел файлы локализаций, можно использовать структуру ключа
-        // t("locale-file:key")
+        // t_("locale-file:key")
         // Если у вас VSСode и установлен плагин i18n-ally, то он не хочет понимать такую структуру ключа, тогда можно использовать структуру:
-        // t("key", {ns: "locale-file"})
+        // t_("key", {ns: "locale-file"})
         // эту структуру понимают все.
 
         // test: /\.m?js$/, // эта регулярка настроена на js файлы
