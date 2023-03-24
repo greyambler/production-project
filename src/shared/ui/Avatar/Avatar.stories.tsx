@@ -1,7 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-// @ts-ignore
-// @ts-ignore: What's the right way to refer to this one?
 import AvatarImg from './storybook.jpg';
 
 export default {
