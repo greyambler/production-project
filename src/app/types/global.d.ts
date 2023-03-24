@@ -7,6 +7,7 @@ declare module '*.scss' {
 }
 
 declare module '*.png';
+declare module '*.jpg';
 declare module '*.jpe';
 declare module '*.jpeg';
 declare module '*.gif';
