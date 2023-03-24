@@ -33,7 +33,8 @@ export const WithError = Template.bind({});
 WithError.args = {
     error: 'true',
 };
+
 export const Loading = Template.bind({});
-WithError.args = {
+Loading.args = {
     isLoading: true,
 };
